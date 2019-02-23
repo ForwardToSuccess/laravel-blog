@@ -36,7 +36,7 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a class="nav-link" href="#">Категории</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.category.index') }}">Категории</a></li>
                                 <li><a class="nav-link" href="#">Материалы</a></li>
                             </ul>
                         </li>

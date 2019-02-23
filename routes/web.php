@@ -20,9 +20,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-// Админка
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function() {
+// Админка
 	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+	Route::resource('/category', 'CategoryController', ['as'=>'admin']);
 });
 
 // блог
