@@ -6,7 +6,7 @@ use App\Post;
 class PostsController extends Controller
 {
 public function index() {
-$posts = DB::table('posts')->orderBy('id', 'descriprion')->paginate(5);
+$posts = DB::table('posts')->orderBy('id', 'descriprion')->paginate(6);
 return view('posts.index', ['posts' => $posts]);
 }
 public function article($id) {

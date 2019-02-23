@@ -19,6 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'PostsController@index')->name('home');
-Route::get('/article/{id}.html', 'PostsController@article');
-Route::get('/category', 'CategoryController@category');
+
+// Админка
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function() {
+	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+});
+
+// блог
+Route::get('/blog', 'PostsController@index')->name('home');
+Route::get('/blog/{id}.html', 'PostsController@article');
+// Route::get('/category', 'CategoryController@category');
